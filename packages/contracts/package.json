@@ -5,10 +5,15 @@
   "scripts": {
     "build": "forge build",
     "test": "forge test -vvv",
-    "lint": "forge fmt --check",
-    "lint:fix": "forge fmt",
-    "clean": "forge clean",
-    "deploy:alfajores": "forge script script/Deploy.s.sol --rpc-url $CELO_ALFAJORES_RPC --broadcast --verify",
-    "deploy:mainnet": "forge script script/Deploy.s.sol --rpc-url $CELO_RPC --broadcast --verify"
+    "test:ci": "forge test --profile ci -vvv",
+    "test:gas": "forge test --gas-report",
+    "coverage": "forge coverage",
+    "deploy:alfajores": "forge script script/Deploy.s.sol --rpc-url alfajores --broadcast --verify",
+    "deploy:celo": "forge script script/Deploy.s.sol --rpc-url celo --broadcast --verify",
+    "lint": "solhint 'src/**/*.sol'",
+    "clean": "forge clean"
+  },
+  "devDependencies": {
+    "solhint": "^4.5.4"
   }
 }
