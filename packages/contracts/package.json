@@ -1,0 +1,14 @@
+{
+  "name": "@agentmesh/contracts",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "forge build",
+    "test": "forge test -vvv",
+    "lint": "forge fmt --check",
+    "lint:fix": "forge fmt",
+    "clean": "forge clean",
+    "deploy:alfajores": "forge script script/Deploy.s.sol --rpc-url $CELO_ALFAJORES_RPC --broadcast --verify",
+    "deploy:mainnet": "forge script script/Deploy.s.sol --rpc-url $CELO_RPC --broadcast --verify"
+  }
+}
